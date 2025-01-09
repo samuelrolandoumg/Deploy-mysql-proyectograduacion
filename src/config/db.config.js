@@ -7,7 +7,7 @@ module.exports = {
   MYSQLPASSWORD: process.env.MYSQLPASSWORD || "1234",
   MYSQLDATABASE: process.env.MYSQLDATABASE || "Clinica",
   MYSQLPORT: process.env.MYSQLPORT || 3306,
-  dialect: "mysql2", // Agrega esta líneasa
+  dialect: "mysql", // Agrega esta líneasa
   pool: {
     max: 5,
     min: 0,
