@@ -1,11 +1,11 @@
 require('dotenv').config(); // Cargar las variables de entorno desde el archivo .env
 
 module.exports = {
-  DB_HOST: process.env.DB_HOST || "localhost",
-  DB_USER: process.env.DB_USER || "root",
-  DB_PASSWORD: process.env.DB_PASSWORD || "root",
-  DB_DATABASE: process.env.DB_DATABASE || "Clinica",
-  DB_PORT: process.env.DB_PORT || 3306, // El puerto predeterminado de MySQL es 3306
+  MYSQLHOST: process.env.MYSQLHOST || "localhost",
+  MYSQLUSER: process.env.MYSQLUSER || "root",
+  MYSQLPASSWORD: process.env.MYSQLPASSWORD || "root",
+  MYSQLDATABASE: process.env.MYSQLDATABASE || "Clinica",
+  MYSQLPORT: process.env.MYSQLPORT || 3306, // El puerto predeterminado de MySQL es 3306
   dialect: "mysql", // Cambiar el dialecto de mssql a mysql
   pool: {
     max: 5,
