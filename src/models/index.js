@@ -2,22 +2,15 @@ const dbConfig = require("../config/db.config.js");
 const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize(
-  dbConfig.database,
-  dbConfig.username,
-  dbConfig.password,
-  {
-    host: dbConfig.host,
-    port: dbConfig.port,
-    dialect: dbConfig.dialect,
-    operatorsAliases: 0,
-    pool: {
-      max: dbConfig.pool.max,
-      min: dbConfig.pool.min,
-      acquire: dbConfig.pool.acquire,
-      idle: dbConfig.pool.idle
+    process.env.MYSQL_DATABASE, // Nombre de la base de datos
+    process.env.MYSQL_USER,     // Usuario
+    process.env.MYSQL_PASSWORD, // Contraseña
+    {
+      host: process.env.MYSQL_HOST, // Dirección del host (mysql.railway.internal)
+      port: process.env.MYSQL_PORT || 3306, // Puerto (3306)
+      dialect: "mysql", // Dialecto que usas (MySQL)
     }
-  }
-);
+  );
 
 const db = {};
 
